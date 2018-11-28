@@ -7,7 +7,7 @@ use Symfony\Component\DomCrawler\Crawler;
 
 class ParseProperty extends Task
 {
-    public function __invoke(): ?Property
+    public function __invoke()
     {
         $node = new Crawler($this->definition);
 
@@ -40,7 +40,7 @@ class ParseProperty extends Task
         return $property;
     }
 
-    private function castRangesToTypes(string $range): array
+    private function castRangesToTypes($range)
     {
         switch ($range) {
             case 'Boolean':

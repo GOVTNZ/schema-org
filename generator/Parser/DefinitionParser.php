@@ -11,7 +11,7 @@ use Spatie\SchemaOrg\Generator\Parser\Tasks\ParseProperty;
 
 class DefinitionParser
 {
-    public function parse(Definitions $definitions): TypeCollection
+    public function parse(Definitions $definitions)
     {
         $types = array_filter($definitions
             ->query('[typeof="rdfs:Class"]')

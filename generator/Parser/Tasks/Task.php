@@ -9,12 +9,12 @@ abstract class Task
     /** @string */
     protected $definition;
 
-    public function __construct(string $definition)
+    public function __construct($definition)
     {
         $this->definition = $definition;
     }
 
-    public static function fromCrawler(Crawler $crawler): self
+    public static function fromCrawler($crawler)
     {
         $node = $crawler->getNode(0);
         $html = $node->ownerDocument->saveHTML($node);
@@ -22,7 +22,7 @@ abstract class Task
         return new static($html);
     }
 
-    protected function getText(Crawler $node, string $selector = null): string
+    protected function getText($node, $selector = null)
     {
         if ($selector) {
             $node = $node->filter($selector)->first();
@@ -35,12 +35,13 @@ abstract class Task
         return trim($node->text());
     }
 
-    protected function getAttribute(Crawler $node, string $attribute): string
+    protected function getAttribute($node, $attribute)
     {
         if ($node->count() === 0) {
             return '';
         }
 
-        return $node->filter("[{$attribute}]")->attr($attribute) ?? '';
+        $attr = $node->filter("[{$attribute}]")->attr($attribute);
+        return isset($attr) ? $attr : '';
     }
 }

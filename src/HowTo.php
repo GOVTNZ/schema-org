@@ -145,9 +145,9 @@ class HowTo extends BaseType
      *
      * @see http://schema.org/yield
      */
-    public function yield($yield)
-    {
-        return $this->setProperty('yield', $yield);
-    }
+//    public function yield($yield)
+//    {
+//        return $this->setProperty('yield', $yield);
+//    }
 
 }

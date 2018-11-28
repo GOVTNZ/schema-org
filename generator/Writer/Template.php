@@ -14,20 +14,20 @@ class Template
     /** @var string */
     protected $template;
 
-    public function __construct(string $template)
+    public function __construct($template)
     {
         $this->template = $template;
         $this->twig = $this->createTwigEnvironment();
     }
 
-    public function render(array $context): string
+    public function render(array $context)
     {
         return $this->twig
             ->load($this->template)
             ->render($context);
     }
 
-    protected function createTwigEnvironment(): Twig_Environment
+    protected function createTwigEnvironment()
     {
         $loader = new Twig_Loader_Filesystem(__DIR__.'/../templates/twig');
 

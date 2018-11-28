@@ -51,7 +51,7 @@ class TypeCollection
         }
     }
 
-    public function toArray(): array
+    public function toArray()
     {
         return $this->types;
     }

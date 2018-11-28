@@ -4,9 +4,9 @@ namespace Spatie\SchemaOrg\Generator\Writer;
 
 class Filters
 {
-    public static function doc($text, array $options = []): string
+    public static function doc($text, array $options = [])
     {
-        $indentation = $options[0] ?? 0;
+        $indentation = isset($options[0]) ? $options[0] : 0;
         $docblockPrefix = str_repeat(' ', $indentation * 4).' * ';
 
         $lineLength = 80 - 3 - ($indentation * 4);
@@ -18,7 +18,7 @@ class Filters
         return wordwrap($text, $lineLength, "\n".$docblockPrefix);
     }
 
-    public static function lcfirst($text): string
+    public static function lcfirst($text)
     {
         return lcfirst($text);
     }

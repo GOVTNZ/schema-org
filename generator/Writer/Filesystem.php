@@ -15,7 +15,7 @@ class Filesystem
     /** @var \Spatie\SchemaOrg\Generator\Writer\Template */
     protected $typeTemplate;
 
-    public function __construct(string $root)
+    public function __construct($root)
     {
         $adapter = new Local($root);
         $this->flysystem = new Flysystem($adapter);

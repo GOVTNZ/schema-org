@@ -7,7 +7,7 @@ use Symfony\Component\DomCrawler\Crawler;
 
 class ParseConstant extends Task
 {
-    public function __invoke(): ?Constant
+    public function __invoke()
     {
         $node = new Crawler($this->definition);
 

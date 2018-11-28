@@ -25,12 +25,12 @@ class Definitions
         }
     }
 
-    public function query(string $selector): Crawler
+    public function query($selector)
     {
         return (new Crawler($this->loadSource('core')))->filter($selector);
     }
 
-    protected function loadSource(string $sourceId, bool $fromCache = true): string
+    protected function loadSource($sourceId, $fromCache = true)
     {
         if (! isset($this->sources[$sourceId])) {
             throw new RuntimeError("Source `{$sourceId}` doesn't exist");

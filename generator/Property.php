@@ -19,12 +19,12 @@ class Property
     /** @var array */
     public $ranges = [];
 
-    public function addType(string $type)
+    public function addType($type)
     {
         $this->types[] = $type;
     }
 
-    public function addRanges(array $ranges)
+    public function addRanges($ranges)
     {
         foreach ($ranges as $range) {
             $this->addRange($range);
@@ -33,7 +33,7 @@ class Property
         sort($this->ranges);
     }
 
-    private function addRange(string $range)
+    private function addRange($range)
     {
         $this->ranges[] = $range;
         $this->ranges[] = "{$range}[]";

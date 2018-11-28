@@ -7,7 +7,7 @@ use Symfony\Component\DomCrawler\Crawler;
 
 class ParseType extends Task
 {
-    public function __invoke(): ?Type
+    public function __invoke()
     {
         $node = new Crawler($this->definition);
 
